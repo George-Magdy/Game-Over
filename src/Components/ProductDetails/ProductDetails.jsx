@@ -30,6 +30,7 @@ export default function ProductDetails() {
 
     let { data } = await axios.get(`https://free-to-play-games-database.p.rapidapi.com/api/game?id=${id}`, options)
     setproductDetails(data)
+    console.log(data);
     setimages(data.screenshots)
     $(".loading").fadeOut(1500)
   }
@@ -72,7 +73,7 @@ export default function ProductDetails() {
                 <p className='border border-0 rounded-3 py-2 bg-gray text-white-50 mt-3 text-center '>FREE</p>
               </div>
               <div className="col-md-9">
-                <a href={productDetails.freetogame_profile_url} target="_blank" ><button className='w-100 border border-0 rounded-3 py-2 bg-blue text-white fw-bolder mt-3 text-center'>PLAY NOW <i className="fa-solid fa-right-from-bracket"></i></button></a>
+                <a href={productDetails.game_url} target="_blank" ><button className='w-100 border border-0 rounded-3 py-2 bg-blue text-white fw-bolder mt-3 text-center'>PLAY NOW <i className="fa-solid fa-right-from-bracket"></i></button></a>
               </div>
             </div>
           </div>

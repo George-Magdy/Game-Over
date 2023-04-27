@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import gaming from '../../Assets/gaming.ebaf2ffc84f4451d.jpg'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
@@ -9,6 +9,13 @@ import { useNavigate , Link } from 'react-router-dom'
 export default function CreateAccount({saveUserData}) {
 
   let BaseURL = "https://route-ecommerce.onrender.com"
+
+
+  useEffect(() => {
+    if (localStorage.getItem("token") !== null) {
+      navigate('/home')
+    }
+  },[])
 
   let [errorMassege, setErrorMassege] = useState("")
   let [loading, setloading] = useState(true)

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Logo from '../../Assets/logo.png'
 import gaming from '../../Assets/gaming.ebaf2ffc84f4451d.jpg'
 import { useFormik } from 'formik'
@@ -22,6 +22,12 @@ export default function Login({saveUserData}) {
 
 
   })
+
+  useEffect(() => {
+    if (localStorage.getItem("token") !== null) {
+      navigate('/home')
+    }
+  },[])
 
 
 
