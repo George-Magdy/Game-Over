@@ -82,7 +82,8 @@ export default function ProductDetails() {
             <p className='fs-5 fw-bolder mb-1'>About : {productDetails.title}</p>
             <p className='fs-5 p-md-1 p-3'>{productDetails.description}</p>
             <div>
-              <p className='fs-5 fw-bold '>Minimum System Requirements</p>
+              {productDetails.platform === "Windows" ?<p className='fs-5 fw-bold '>Minimum System Requirements</p> : ""}
+             
               {productDetails?.minimum_system_requirements?.graphics ? <p><span className='fw-bold'>graphics</span> : {productDetails?.minimum_system_requirements?.graphics}</p> : ""}
               {productDetails?.minimum_system_requirements?.memory ? <p><span className='fw-bold'>memory</span> : {productDetails?.minimum_system_requirements?.memory}</p> : ""}
               {productDetails?.minimum_system_requirements?.os ? <p><span className='fw-bold'>os</span> : {productDetails?.minimum_system_requirements?.os}</p> : ""}
