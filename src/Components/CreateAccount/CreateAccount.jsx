@@ -59,7 +59,6 @@ export default function CreateAccount({saveUserData}) {
     if (data.data.message === "success") {
 
       saveUserData(data.data.user)
-      localStorage.setItem("token",data.data.token)
       navigate('/login')
     }
   }
